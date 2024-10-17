@@ -42,6 +42,10 @@ This project focuses on predicting traffic volumes on road segments and calculat
    - Using **NetworkX**, a graph of streets was built where nodes represent streets and edges represent connections (roads).
    - The shortest path between two streets was calculated using road lengths to help identify optimal traffic routes.
    - This analysis helps in identifying problematic areas in the transport network and suggests possible routing optimizations.
+     
+3. **Geospatial Data Processing**:
+   - We utilize **Google Cloud Storage (GCS)** to store and retrieve shapefiles representing spatial data.
+   - These shapefiles are downloaded and processed using **GeoPandas** for spatial analysis within the Jupyter Notebook environment.
 
 
 Below is a screenshot of the database file used for traffic prediction and analysis:
@@ -59,6 +63,19 @@ Below is a screenshot of the database file used for traffic prediction and analy
 1. Clone the repository:
    ```bash
    git clone https://github.com/patil-pus/Transport-Network-Analysis-and-Traffic-Flow-Optimization.git
+
+2. Code to Load Shapefiles from GCS into Jupyter:
+   Load Environment Variables from .env:
+   import os
+   from dotenv import load_dotenv
+   
+   # Load .env variables
+   load_dotenv()
+   
+   # Check if GOOGLE_APPLICATION_CREDENTIALS is set correctly
+   credentials_path = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
+   print(f'Credentials Path: {credentials_path}')
+
 
 
 ### Notes:
